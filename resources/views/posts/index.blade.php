@@ -10,6 +10,13 @@
 		<h2>{{ $post->title }} <small>({{ $post->created_at }})</small></h2>
 		<p>{{ $post->content }}</p>
 
+		<p>
+			<strong>Tags: </strong>
+				@foreach ( $post->tags as $key => $tag )
+					@if ( $key > 0 ) | @endif 
+					{{ $tag->name }}
+				@endforeach
+		</p>
 		<h3>
 			Comments: 
 				@if ( count( $post->comments ) == 0 ) 

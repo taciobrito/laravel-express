@@ -11,14 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get( '/', 'PostsController@index' );
 
-Route::get( 'ola/{nome}', 'TestController@index' );
+Route::get( 'admin', 'PostsAdminController@index' );
 
-Route::get( 'notas', 'TestController@notas' );
 
-Route::get( 'blog', 'PostsController@index' );
 
-Route::get( 'blog/post/{id?}', 'PostsController@post' );
+
+// Route::get( 'blog', 'PostsController@index' );
+
+// Route::get( 'blog/post/{id?}', 'PostsController@post' );
+
+// Route::get( 'blog/post/{id?}', 'PostsController@post' );
