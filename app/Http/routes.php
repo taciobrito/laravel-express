@@ -15,7 +15,7 @@ Route::get( '/', 'PostsController@index' );
 
 Route::get( 'admin', 'PostsAdminController@index' );
 
-
+Route::get( 'admin/create', 'PostsAdminController@create' );
 
 
 // Route::get( 'blog', 'PostsController@index' );

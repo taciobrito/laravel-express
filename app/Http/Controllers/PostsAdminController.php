@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class PostsAdminController extends Controller
 {
@@ -24,6 +22,11 @@ class PostsAdminController extends Controller
 
 			return view( 'admin/posts/index', compact( 'posts' ) );
 
+		}
+
+		public function create()
+		{
+			return view('admin/posts/create');
 		}
 
 }
