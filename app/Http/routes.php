@@ -13,8 +13,11 @@
 
 Route::get( '/', 'PostsController@index' );
 
+Route::get( 'auth/login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@getLogin'] );
+Route::post( 'auth/login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@postLogin'] );
+
 // Rotas para admin
-Route::group( ['prefix' => 'admin'], function(){
+Route::group( ['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
 		// Rotas para posts
 		Route::group( ['prefix' => 'posts'], function(){

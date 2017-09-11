@@ -13,6 +13,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
+
+        factory( 'App\User' )->create(
+            [
+                'name' => 'Tacio',
+                'email' => 'tacio.dmaior@yahoo.com.br',
+                'password' => bcrypt('123456'),
+                'remember_token' => str_random(10),
+            ]
+        );
         
         DB::statement('SET FOREIGN_KEY_CHECKS=0;'); 
 
